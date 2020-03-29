@@ -1,5 +1,7 @@
 package com.automation.tests.vyteck.sprint_01;
 
+import org.testng.annotations.Test;
+
 public class BO6_66 {
     /*
 
