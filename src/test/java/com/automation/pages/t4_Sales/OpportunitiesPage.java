@@ -15,5 +15,7 @@ public class OpportunitiesPage extends AbstractPageBase {
     public void createOpportunity(){
 
         wait.until(ExpectedConditions.elementToBeClickable(createOpportunity)).click();
+
+        System.out.println("DONE!");
     }
 }
