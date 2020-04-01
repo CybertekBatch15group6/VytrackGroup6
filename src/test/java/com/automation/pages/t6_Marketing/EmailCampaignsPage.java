@@ -1,4 +1,4 @@
 package com.automation.pages.t6_Marketing;
 
-public class Campaigns {
+public class EmailCampaignsPage {
 }

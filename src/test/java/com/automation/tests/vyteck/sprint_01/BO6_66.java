@@ -1,13 +1,12 @@
 package com.automation.tests.vyteck.sprint_01;
 
-import com.automation.tests.vyteck.FirstTest;
+import com.automation.tests.vyteck.AbstractTestBase;
 import com.automation.utilities.BrowserUtils;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.testng.annotations.Test;
 
-public class BO6_66 extends FirstTest {
+public class BO6_66 extends AbstractTestBase {
     /*
 
     Rauf

@@ -1,4 +1,4 @@
 package com.automation.pages.t3_Customers;
 
-public class Accounts {
+public class AccountsPage {
 }

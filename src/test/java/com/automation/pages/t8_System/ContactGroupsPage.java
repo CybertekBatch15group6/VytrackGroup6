@@ -1,4 +1,4 @@
 package com.automation.pages.t8_System;
 
-public class ContactGroups {
+public class ContactGroupsPage {
 }

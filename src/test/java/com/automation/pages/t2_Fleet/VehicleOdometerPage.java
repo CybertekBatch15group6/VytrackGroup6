@@ -1,4 +1,4 @@
 package com.automation.pages.t2_Fleet;
 
-public class VehicleOdometer {
+public class VehicleOdometerPage {
 }
