@@ -6,6 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.util.List;
+import java.util.Set;
+
 public class VehiclesPage extends AbstractPageBase {
 
 
@@ -17,5 +20,14 @@ public class VehiclesPage extends AbstractPageBase {
         BrowserUtils.waitForPageToLoad(10);
         wait.until(ExpectedConditions.elementToBeClickable(createCar)).click();
 
+    }
+
+
+    @FindBy(className = "grid-header-cell__label")
+    public List<WebElement> columnNames;
+
+    public List<String> getColumnNames(){
+        BrowserUtils.waitForPageToLoad(20);
+        return BrowserUtils.getTextFromWebElements(columnNames);
     }
 }
