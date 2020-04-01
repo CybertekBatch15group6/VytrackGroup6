@@ -1,4 +1,4 @@
-package com.automation.pages.t3_Fleet;
+package com.automation.pages.t2_Fleet;
 
 import com.automation.pages.AbstractPageBase;
 import org.openqa.selenium.WebElement;
