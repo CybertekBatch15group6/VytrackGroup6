@@ -24,5 +24,6 @@ page by click on any of the car on the grid.
         loginPage.login("user15","UserUser123");
         BrowserUtils.wait(2);
 
+
     }
 }
