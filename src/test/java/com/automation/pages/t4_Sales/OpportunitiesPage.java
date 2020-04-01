@@ -13,7 +13,6 @@ public class OpportunitiesPage extends AbstractPageBase {
     private WebElement createOpportunity;
 
     public void createOpportunity(){
-
         wait.until(ExpectedConditions.elementToBeClickable(createOpportunity)).click();
 
         System.out.println("DONE!");

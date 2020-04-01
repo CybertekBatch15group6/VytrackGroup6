@@ -1,7 +1,7 @@
 package com.automation.tests.vyteck.sprint_01;
 
 import com.automation.pages.LoginPage;
-import com.automation.pages.t3_Fleet.VehiclesModelPage;
+import com.automation.pages.t2_Fleet.VehiclesModelPage;
 import com.automation.tests.vyteck.AbstractTestBase;
 import com.automation.utilities.Driver;
 import org.openqa.selenium.By;
