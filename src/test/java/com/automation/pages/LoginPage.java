@@ -21,7 +21,7 @@ public class LoginPage {
     @FindBy(linkText = "Forgot your password?")
     private WebElement forgotPassword;
 
-    @FindBy(css = "[class='alert alert-error']")
+    @FindBy(xpath = "//div[contains(text(),'Invalid user name or password.')]")
     private WebElement warningMessage;
 
     /**
@@ -55,4 +55,6 @@ public class LoginPage {
         username.sendKeys(ConfigurationReader.getProperty("store_manager"));
         password.sendKeys(ConfigurationReader.getProperty("manager_password"), Keys.ENTER);
     }
+
+
 }
