@@ -20,7 +20,7 @@ public class B06_70 {
      */
 
     @Test
-    public void verifyAllVehicleInformation() {
+    public void loginAsTruckDriver() {
         LoginPage loginPage = new LoginPage();
         VehiclesPage vehiclesPage = new VehiclesPage();
         loginPage.login("user18", "UserUser123");
