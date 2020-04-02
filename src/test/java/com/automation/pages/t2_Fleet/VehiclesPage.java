@@ -24,17 +24,19 @@ public class VehiclesPage extends AbstractPageBase {
     private WebElement popup;
 
     @FindBy(className = "grid-header-cell__label")
-    private List<WebElement> columnNames;
-
-    public void clickToCreateCar(){
-        BrowserUtils.waitForPageToLoad(15);
-        wait.until(ExpectedConditions.elementToBeClickable(createCar)).click();
-    }
+    public List<WebElement> columnNames;
 
     public List<String> getColumnNames(){
         BrowserUtils.waitForPageToLoad(20);
         return BrowserUtils.getTextFromWebElements(columnNames);
     }
+
+    public void clickToCreateCar(){
+        BrowserUtils.waitForPageToLoad(15);
+        wait.until(ExpectedConditions.elementToBeClickable(createCar)).click();
+
+    }
+
 
     public void saveCar(){
         BrowserUtils.waitForPageToLoad(10);
