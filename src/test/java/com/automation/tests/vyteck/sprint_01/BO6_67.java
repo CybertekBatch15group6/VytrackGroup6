@@ -24,27 +24,27 @@ information page as well .
 */
 
 
-//    @Test
-//    public void verifyAllVehicleInformation() {
-//        // 1.Verify that truck driver should be able to see all
-//        // Vehicle information once navigate to Vehicle page.
-//
-//        LoginPage loginPage = new LoginPage();
-//        VehiclesPage vehiclesPage = new VehiclesPage();
-//        loginPage.login("user16", "UserUser123");
-//        vehiclesPage.navigateTo("Fleet", "Vehicles");
-//        BrowserUtils.wait(5);
-//
-//        List<String> expected = Arrays.asList("LICENSE PLATE", "TAGS", "DRIVER", "LOCATION",
-//                "CHASSIS NUMBER", "MODEL YEAR", "LAST ODOMETER", "IMMATRICULATION DATE",
-//                "FIRST CONTRACT DATE", "CVVI", "SEATS NUMBER", "DOORS NUMBER", "COLOR",
-//                "TRANSMISSION", "FUEL TYPE", "CO2 EMISSIONS", "HORSEPOWER", "HORSEPOWER TAXATION", "POWER (KW)", "CVVI" );
-//
-////        List<String> actual = vehiclesPage.getColumnNames();
-//
-//        Assert.assertEquals(actual, expected);
-//
-//        }
+    @Test
+    public void verifyAllVehicleInformation() {
+        // 1.Verify that truck driver should be able to see all
+        // Vehicle information once navigate to Vehicle page.
+
+        LoginPage loginPage = new LoginPage();
+        VehiclesPage vehiclesPage = new VehiclesPage();
+        loginPage.login("user16", "UserUser123");
+        vehiclesPage.navigateTo("Fleet", "Vehicles");
+        BrowserUtils.wait(4);
+
+        List<String> expected = Arrays.asList("LICENSE PLATE", "TAGS", "DRIVER", "LOCATION",
+                "CHASSIS NUMBER", "MODEL YEAR", "LAST ODOMETER", "IMMATRICULATION DATE",
+                "FIRST CONTRACT DATE", "CVVI", "SEATS NUMBER", "DOORS NUMBER", "COLOR",
+                "TRANSMISSION", "FUEL TYPE", "CO2 EMISSIONS", "HORSEPOWER", "HORSEPOWER TAXATION", "POWER (KW)", "CVVI" );
+
+        List<String> actual = vehiclesPage.getColumnNames();
+
+        Assert.assertEquals(actual, expected);
+
+        }
 
     }
 
