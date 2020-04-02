@@ -1,10 +1,15 @@
 package com.automation.tests.vyteck.sprint_01;
 
+import com.automation.pages.LoginPage;
+import com.automation.pages.t2_Fleet.VehiclesPage;
 import com.automation.tests.vyteck.AbstractTestBase;
 import com.automation.utilities.BrowserUtils;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 public class BO6_66 extends AbstractTestBase {
     /*
@@ -24,14 +29,30 @@ navigate to a Vehicle page
 
 
 
+    @Test
+    public void verifyTitle(){
+        LoginPage loginPage = new LoginPage();
+        VehiclesPage vehiclesPage = new VehiclesPage();
 
-    @FindBy(partialLinkText = "Create Car")
-    private WebElement createCar;
+        loginPage.login();
+        vehiclesPage.navigateTo("Fleet", "Vehicles");
 
+        BrowserUtils.wait(3);
+        vehiclesPage.clickToCreateCar();
+        BrowserUtils.wait(3);
+        vehiclesPage.saveCar();
+        BrowserUtils.wait(5);
 
-    public void clickToCreateCar(){
-        BrowserUtils.waitForPageToLoad(10);
-        wait.until(ExpectedConditions.elementToBeClickable(createCar)).click();
+        String actual=vehiclesPage.popupMsg();
+        String expected ="Entity saved";
+
+        Assert.assertTrue(actual.contains(expected));
+
 
     }
+
+
+
+
+
 }
