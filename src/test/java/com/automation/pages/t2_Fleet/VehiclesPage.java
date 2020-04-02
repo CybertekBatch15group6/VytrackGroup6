@@ -23,6 +23,14 @@ public class VehiclesPage extends AbstractPageBase {
     @FindBy(xpath = "//div[@class='flash-messages-holder']")
     private WebElement popup;
 
+    @FindBy(className = "grid-header-cell__label")
+    public List<WebElement> columnNames;
+
+    public List<String> getColumnNames(){
+        BrowserUtils.waitForPageToLoad(20);
+        return BrowserUtils.getTextFromWebElements(columnNames);
+    }
+
     public void clickToCreateCar(){
         BrowserUtils.waitForPageToLoad(15);
         wait.until(ExpectedConditions.elementToBeClickable(createCar)).click();

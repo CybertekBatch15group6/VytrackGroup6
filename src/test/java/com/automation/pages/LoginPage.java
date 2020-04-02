@@ -36,6 +36,7 @@ public class LoginPage {
     public String getWarningMessageText(){
         return warningMessage.getText();
     }
+
     /**
      * Method to login, version 1
      * login as a specific user
@@ -46,15 +47,37 @@ public class LoginPage {
         username.sendKeys(usernameValue);
         password.sendKeys(passwordValue, Keys.ENTER);
     }
+
     /**
      * Method to login, version #2
-     * login as the default user
+     * login as a Store Manager user
      * Credentials will be retrieved from configuration.properties file
      */
     public void login(){
         username.sendKeys(ConfigurationReader.getProperty("store_manager"));
         password.sendKeys(ConfigurationReader.getProperty("manager_password"), Keys.ENTER);
     }
+
+    /**
+     * Method to login, version #3
+     * login as a Sales Manager user
+     * Credentials will be retrieved from configuration.properties file
+     * */
+    public void loginSalesManager(){
+        username.sendKeys(ConfigurationReader.getProperty("sales_manager"));
+        password.sendKeys(ConfigurationReader.getProperty("sales_password"), Keys.ENTER);
+    }
+
+    /**
+     * Method to login, version #4
+     * login as a Truck Driver user
+     * Credentials will be retrieved from configuration.properties file
+     * */
+    public void loginDriver(){
+        username.sendKeys(ConfigurationReader.getProperty("Track_Driver"));
+        password.sendKeys(ConfigurationReader.getProperty("Track_password"), Keys.ENTER);
+    }
+
 
 
 }
