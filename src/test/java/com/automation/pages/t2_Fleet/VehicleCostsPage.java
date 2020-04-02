@@ -41,6 +41,10 @@ public class VehicleCostsPage extends AbstractPageBase {
 
     @FindBy(xpath = "//h5/../div/div/div")
     private List<WebElement> inputs;
+    
+    @FindBy(xpath = "//h1[@class='oro-subtitle']")
+    private WebElement TrackDriverVehicleCostPage;
+    public String getVehicleCostsPageText() {
 
     public String getVehicleCostsPageText() {
         BrowserUtils.waitForPageToLoad(6);
