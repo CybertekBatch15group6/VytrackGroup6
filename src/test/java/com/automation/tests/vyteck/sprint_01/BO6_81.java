@@ -26,6 +26,7 @@ public class BO6_81 extends AbstractTestBase {
 
     @Test (description = "AC 1: Login and see all Vehicles model information")
     public void verifyToSeeAllVehiclesModel(){
+
         LoginPage loginPage = new LoginPage();
         VehiclesModelPage vehiclesModel = new VehiclesModelPage();
 
