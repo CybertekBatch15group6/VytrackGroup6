@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
 
 
 public class VehiclesFuelLogsPage extends AbstractPageBase {
@@ -17,6 +18,11 @@ public class VehiclesFuelLogsPage extends AbstractPageBase {
         wait.until(ExpectedConditions.elementToBeClickable(createVehicleFuelLogs)).click();
     }
 
+    public void Assertion(){
+    String expected = "Vehicle Fuel Logs";
+    String actual = Driver.getDriver().findElement(By.className("oro-subtitle")).getText();
+    Assert.assertEquals(actual,expected);
+    }
 
 
 
