@@ -33,7 +33,7 @@ information page as well .
         VehiclesPage vehiclesPage = new VehiclesPage();
         loginPage.login("user16", "UserUser123");
         vehiclesPage.navigateTo("Fleet", "Vehicles");
-        BrowserUtils.wait(5);
+        BrowserUtils.wait(4);
 
         List<String> expected = Arrays.asList("LICENSE PLATE", "TAGS", "DRIVER", "LOCATION",
                 "CHASSIS NUMBER", "MODEL YEAR", "LAST ODOMETER", "IMMATRICULATION DATE",
