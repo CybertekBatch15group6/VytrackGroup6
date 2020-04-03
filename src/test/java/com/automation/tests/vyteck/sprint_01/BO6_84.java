@@ -26,21 +26,22 @@ public class BO6_84 extends AbstractTestBase {
    4.Verify that truck driver should be able to reset the grid by clicking on Grid setting
      */
 
-    @Test (description = "AC 1: Login and see all Vehicle fuel logs information")
-    public void verifyToVehicleFuelLogs(){
+    @Test(description = "AC 1: Login and see all Vehicle fuel logs information")
+    public void verifyToVehicleFuelLogs() {
 
-        VehiclesModelPage vehiclesFuelLogs = new VehiclesModelPage();
+        VehiclesFuelLogsPage vehiclesFuelLogs = new VehiclesFuelLogsPage();
 
         LoginPage loginPage = new LoginPage();
         loginPage.login();
+        BrowserUtils.waitForPageToLoad(3);
 
         vehiclesFuelLogs.navigateTo("Fleet", "Vehicles Fuel Logs");
+        BrowserUtils.waitForPageToLoad(3);
 
-        String expected = "Vehicle Fuel Logs";
-        String actual = Driver.getDriver().findElement(By.className("oro-subtitle")).getText();
+        vehiclesFuelLogs.clickToCreateVehicleFuelLogs();
+        BrowserUtils.waitForPageToLoad(3);
 
-        Assert.assertEquals(actual,expected);
+        vehiclesFuelLogs.Assertion();
 
     }
-
 }
