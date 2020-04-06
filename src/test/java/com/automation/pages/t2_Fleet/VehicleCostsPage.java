@@ -78,6 +78,7 @@ public class VehicleCostsPage extends AbstractPageBase {
 
     public void clickToCreate() {
         BrowserUtils.waitForPageToLoad(6);
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("loader-mask shown")));
         wait.until(ExpectedConditions.elementToBeClickable(createCost)).click();
 
     }
