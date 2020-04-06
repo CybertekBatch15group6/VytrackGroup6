@@ -14,6 +14,7 @@ public abstract class AbstractTestBase {
     public void setup(){
         String URL = ConfigurationReader.getProperty("qa1");
         String trackDriverURL = ConfigurationReader.getProperty("qa2");
+        Driver.getDriver().get(trackDriverURL);
         Driver.getDriver().get(URL);
         Driver.getDriver().manage().window().maximize();
         wait = new WebDriverWait(Driver.getDriver(), 15);

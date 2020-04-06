@@ -58,6 +58,7 @@ public class LoginPage {
         password.sendKeys(ConfigurationReader.getProperty("manager_password"), Keys.ENTER);
     }
 
+
     /**
      * Method to login, version #3
      * login as a Sales Manager user
@@ -65,7 +66,7 @@ public class LoginPage {
      * */
     public void loginSalesManager(){
         username.sendKeys(ConfigurationReader.getProperty("sales_manager"));
-        password.sendKeys(ConfigurationReader.getProperty("sales_password"), Keys.ENTER);
+        password.sendKeys(ConfigurationReader.getProperty("sales_passw"), Keys.ENTER);
     }
 
     /**

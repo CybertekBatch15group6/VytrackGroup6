@@ -44,7 +44,32 @@ public class VehicleCostsPage extends AbstractPageBase {
     
     @FindBy(xpath = "//h1[@class='oro-subtitle']")
     private WebElement TrackDriverVehicleCostPage;
-   
+
+    @FindBy(linkText= "Create Vehicle Costs")
+    private WebElement CreateVehicleCostPage;
+
+    @FindBy(xpath = "//h1[@class='user-name']")
+    private WebElement getCreatePageName;
+
+    @FindBy (xpath = "//tbody//tr/td//div//div//ul//li//ul/li[2]//a[1]")
+    private WebElement clickEdit;
+
+    public void clickEdit(){
+        BrowserUtils.waitForPageToLoad(7);
+        wait.until(ExpectedConditions.elementToBeClickable(clickEdit)).click();
+
+    }
+
+    public String getCreatePname(){
+        return getCreatePageName.getText();
+    }
+
+    public void clickCreateVehicleCost(){
+        BrowserUtils.waitForPageToLoad(6);
+        wait.until(ExpectedConditions.elementToBeClickable(CreateVehicleCostPage)).click();
+    }
+
+
     public String getVehicleCostsPageText() {
         BrowserUtils.waitForPageToLoad(6);
         wait.until(ExpectedConditions.visibilityOf(allVehicleCosts));
