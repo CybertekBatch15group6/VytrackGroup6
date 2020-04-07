@@ -41,7 +41,6 @@ public class B06_70 extends AbstractTestBase {
 
         Assert.assertEquals(actual,expected);
 
-
     }
 
     @Test(description = "AC#2: Verify that the Truck driver should be able to create a Vehicle odometer or cancel it.")
@@ -49,9 +48,8 @@ public class B06_70 extends AbstractTestBase {
         verifyOdometerInformation();
         BrowserUtils.waitForPageToLoad(10);
 
-
-//        VehicleOdometerPage vehicleOdometerPage = new VehicleOdometerPage();
-//        vehicleOdometerPage.createAndCancelVehicleOdometer();
+        VehicleOdometerPage vehicleOdometerPage = new VehicleOdometerPage();
+        vehicleOdometerPage.createAndCancelVehicleOdometer();
 
     }
 
