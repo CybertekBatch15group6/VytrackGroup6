@@ -3,6 +3,7 @@ package com.automation.pages.t2_Fleet;
 import com.automation.pages.*;
 import com.automation.utilities.*;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.*;
 import org.openqa.selenium.support.ui.*;
 import java.util.*;
@@ -51,21 +52,39 @@ public class VehicleCostsPage extends AbstractPageBase {
     @FindBy(xpath = "//h1[@class='user-name']")
     private WebElement getCreatePageName;
 
-    @FindBy (xpath = "//tbody//tr/td//div//div//ul//li//ul/li[2]//a[1]")
-    private WebElement clickEdit;
+    @FindBy(xpath="//body[@class='desktop-version lang-en']/div[@id='page']/div[@class='app-page__content']/div[@class='app-page__main']/div[@id='central-panel']/div[@id='container']/div[@id='grid-custom-entity-grid-770475748']/div[@class='oro-datagrid']/div[@class='other-scroll-container']/div[@class='grid-scrollable-container']/div[@class='grid-container']/table[@class='grid table-hover table table-bordered table-condensed']/tbody[@class='grid-body']/tr[1]/td[4]/div[1]/div[1]/a[1]")
+    private WebElement selectionOption;
 
-    public void clickEdit(){
-        BrowserUtils.waitForPageToLoad(7);
-        wait.until(ExpectedConditions.elementToBeClickable(clickEdit)).click();
+    @FindBy(xpath = "//ul[@class='nav nav-pills icons-holder launchers-list']//li[3]//a")
+    private WebElement deleteBtn;
+
+    @FindBy (xpath = "//td[contains(text(),'Summer tires')]")
+    private WebElement clicksummerTires;
+
+    public void clickTheSummerTires(){
+        BrowserUtils.waitForPageToLoad(10);
+        wait.until(ExpectedConditions.elementToBeClickable(clicksummerTires)).click();
 
     }
 
+//    public void clickDeletePage(){
+//        BrowserUtils.waitForPageToLoad(15);
+//        Actions actions = new Actions(Driver.getDriver());
+//
+//        BrowserUtils.wait(3);
+//
+//        actions.moveToElement(selectionOption).
+//                pause(500).
+//                click(deleteBtn).
+//                pause(2000).
+//                build().perform();
+//    }
     public String getCreatePname(){
         return getCreatePageName.getText();
     }
 
     public void clickCreateVehicleCost(){
-        BrowserUtils.waitForPageToLoad(6);
+        BrowserUtils.waitForPageToLoad(20);
         wait.until(ExpectedConditions.elementToBeClickable(CreateVehicleCostPage)).click();
     }
 

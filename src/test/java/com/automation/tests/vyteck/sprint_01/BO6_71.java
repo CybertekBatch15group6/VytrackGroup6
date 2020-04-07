@@ -1,4 +1,5 @@
 package com.automation.tests.vyteck.sprint_01;
+
 import com.automation.pages.AbstractPageBase;
 import com.automation.pages.LoginPage;
 import com.automation.pages.t2_Fleet.VehicleCostsPage;
@@ -6,9 +7,14 @@ import com.automation.tests.vyteck.AbstractTestBase;
 import com.automation.utilities.BrowserUtils;
 import com.automation.utilities.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.util.List;
 
 public class BO6_71 extends AbstractTestBase {
 
@@ -27,7 +33,7 @@ page by click on any of the car on the grid.
     VehicleCostsPage vehicleCostsPage = new VehicleCostsPage();
 
     @Test
-    public void LoginWithTrackDriver(){
+    public void LoginWithTrackDriver() {
         loginPage.loginDriver();
         //LoginPage loginPage = new LoginPage();
         //loginPage.login("user15","UserUser123");
@@ -35,47 +41,47 @@ page by click on any of the car on the grid.
     }
 
     @Test
-    public void getVehicleCoastPage(){
-      //LoginWithTrackDriver();
+    public void getVehicleCoastPage() {
+        //LoginWithTrackDriver();
         loginPage.loginDriver();
-      BrowserUtils.wait(3);
+        BrowserUtils.wait(3);
         //VehicleCostsPage page = new VehicleCostsPage();
 
-      vehicleCostsPage.navigateTo("Fleet","Vehicle Costs");
-      BrowserUtils.waitForPageToLoad(5);
+        vehicleCostsPage.navigateTo("Fleet", "Vehicle Costs");
+        BrowserUtils.waitForPageToLoad(5);
 
-      String expactedReult ="Vehicle Costs - Entities - System - Car - Entities - System";
-      String actual = Driver.getDriver().getTitle();
+        String expactedReult = "Vehicle Costs - Entities - System - Car - Entities - System";
+        String actual = Driver.getDriver().getTitle();
         BrowserUtils.wait(3);
-        Assert.assertEquals(actual,expactedReult);
+        Assert.assertEquals(actual, expactedReult);
 
     }
 
     @Test
-    public void clickCreateVhiclePage(){
-      loginPage.loginDriver();
+    public void clickCreateVhiclePage() {
+        loginPage.loginDriver();
         BrowserUtils.wait(3);
         //VehicleCostsPage page = new VehicleCostsPage();
-        vehicleCostsPage.navigateTo("Fleet","Vehicle Costs");
-       vehicleCostsPage.clickCreateVehicleCost();
-        BrowserUtils.wait(9);
-        //BrowserUtils.waitForPageToLoad(15);
+        vehicleCostsPage.navigateTo("Fleet", "Vehicle Costs");
+        vehicleCostsPage.clickCreateVehicleCost();
+        BrowserUtils.wait(10);
 
-        String expacted= "Create Vehicle Costs";
-        Assert.assertEquals(vehicleCostsPage.getCreatePname(),expacted,"not match");
+        String expacted = "Create Vehicle Costs";
+        Assert.assertEquals(vehicleCostsPage.getCreatePname(), expacted, "not match");
 
     }
 
     @Test
-    public void editCostPage(){
+    public void cliclEdit(){
         loginPage.loginDriver();
         BrowserUtils.wait(3);
         //VehicleCostsPage page = new VehicleCostsPage();
-        vehicleCostsPage.navigateTo("Fleet","Vehicle Costs");
-        vehicleCostsPage.clickEdit();
+        vehicleCostsPage.navigateTo("Fleet", "Vehicle Costs");
+        BrowserUtils.wait(10);
 
-
-
+        vehicleCostsPage.clickTheSummerTires();
     }
+
+
 
 }

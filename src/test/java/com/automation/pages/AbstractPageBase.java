@@ -55,6 +55,9 @@ public class AbstractPageBase {
                 build().perform();
     }
 
+
+
+
     public String getCurrentUserName(){
         BrowserUtils.waitForPageToLoad(10);
         wait.until(ExpectedConditions.visibilityOf(currentUser));
