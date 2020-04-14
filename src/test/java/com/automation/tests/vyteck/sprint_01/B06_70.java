@@ -20,7 +20,7 @@ public class B06_70 extends AbstractTestBase {
         1. Verify that the truck driver should be able to see all vehicle odometer information on the grid. 
         2. Verify that the Truck driver should be able to create a Vehicle odometer or cancel it. 
         3. Verify that the truck driver should be able to delete or edit Vehicle odometer. 
-        4.Verify that truck driver should be able to reset grid by click on grid settingg
+        4.Verify that truck driver should be able to reset grid by click on grid setting
 
      */
 

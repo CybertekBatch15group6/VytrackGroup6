@@ -29,8 +29,15 @@ page by click on any of the car on the grid.
 6.Verify that truck driver should be able to reset the grid by click on Grit setting"
      */
 
+
+
     LoginPage loginPage = new LoginPage();
     VehicleCostsPage vehicleCostsPage = new VehicleCostsPage();
+
+    @Test
+    public void clickDelte(){
+
+    }
 
     @Test
     public void LoginWithTrackDriver() {
@@ -40,6 +47,18 @@ page by click on any of the car on the grid.
         BrowserUtils.waitForPageToLoad(9);
     }
 
+
+    @Test
+    public void deleteBottn(){
+        loginPage.loginDriver();
+        BrowserUtils.wait(3);
+        //VehicleCostsPage page = new VehicleCostsPage();
+
+        vehicleCostsPage.navigateTo("Fleet", "Vehicle Costs");
+      BrowserUtils.wait(5);
+      vehicleCostsPage.setDeleteBtn();
+
+    }
     @Test
     public void getVehicleCoastPage() {
         //LoginWithTrackDriver();
@@ -72,16 +91,23 @@ page by click on any of the car on the grid.
     }
 
     @Test
-    public void cliclEdit(){
+    public void cliclEdit() {
         loginPage.loginDriver();
         BrowserUtils.wait(3);
         //VehicleCostsPage page = new VehicleCostsPage();
         vehicleCostsPage.navigateTo("Fleet", "Vehicle Costs");
-        BrowserUtils.wait(10);
+        BrowserUtils.wait(6);
 
         vehicleCostsPage.clickTheSummerTires();
-    }
+        vehicleCostsPage.clickAttachment();
+        BrowserUtils.wait(5);
 
+
+        String checkTitile = "Add Attachment";
+        Assert.assertEquals(vehicleCostsPage.verifyAttachmentTitle(), checkTitile);
+
+
+    }
 
 
 }

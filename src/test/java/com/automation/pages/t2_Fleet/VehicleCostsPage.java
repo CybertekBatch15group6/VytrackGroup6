@@ -51,15 +51,59 @@ public class VehicleCostsPage extends AbstractPageBase {
 
     @FindBy(xpath = "//h1[@class='user-name']")
     private WebElement getCreatePageName;
-
-    @FindBy(xpath="//body[@class='desktop-version lang-en']/div[@id='page']/div[@class='app-page__content']/div[@class='app-page__main']/div[@id='central-panel']/div[@id='container']/div[@id='grid-custom-entity-grid-770475748']/div[@class='oro-datagrid']/div[@class='other-scroll-container']/div[@class='grid-scrollable-container']/div[@class='grid-container']/table[@class='grid table-hover table table-bordered table-condensed']/tbody[@class='grid-body']/tr[1]/td[4]/div[1]/div[1]/a[1]")
+    @FindBy(xpath="//tbody//tr[1]//td[4]")
     private WebElement selectionOption;
 
-    @FindBy(xpath = "//ul[@class='nav nav-pills icons-holder launchers-list']//li[3]//a")
+    @FindBy(css = "//table[@class='grid table-hover table table-bordered table-condensed']//tbody//tr[2]//a[@title='Delete']")
     private WebElement deleteBtn;
-
+    //table[@class='grid table-hover table table-bordered table-condensed']//tbody//tr[2]//a[@title='Delete']
     @FindBy (xpath = "//td[contains(text(),'Summer tires')]")
     private WebElement clicksummerTires;
+
+
+    @FindBy(xpath = "//a[contains(text(),'Add attachment')]")
+    private WebElement clickAddAttachment;
+
+    @FindBy(xpath = "//span[text()='Add attachment']")
+    private WebElement attachementTitle;
+//body[@class='desktop-version lang-en']/div[@id='page']/div[@class='app-page__content']/div[@class='app-page__main']/div[@id='central-panel']/div[@id='container']/div[@id='grid-custom-entity-grid-515156839']/div[@class='oro-datagrid']/div[@class='other-scroll-container']/div[@class='grid-scrollable-container']/div[@class='grid-container']/table[@class='grid table-hover table table-bordered table-condensed']/tbody[@class='grid-body']/tr[1]/td[4]/div[1]/div[1]/a[1]
+
+    public void setDeleteBtn(){
+        BrowserUtils.waitForPageToLoad(7);
+        Actions actions = new Actions(driver);
+
+        BrowserUtils.wait(3);
+
+        actions.moveToElement(selectionOption).perform();
+        BrowserUtils.wait(3);
+
+        actions.click(deleteBtn).build().perform();
+
+//=====================================
+//        actions.moveToElement(selectionOption).
+//                pause(2000).
+//                click(deleteBtn).
+//                pause(2000).
+//                build().perform();
+       wait.until(ExpectedConditions.elementToBeClickable(selectionOption)).click();
+       BrowserUtils.wait(3);
+
+
+    }
+    public String verifyAttachmentTitle(){
+        BrowserUtils.wait(5);
+        return attachementTitle.getText();
+    }
+//    WebElement upload1 = Driver.getDriver().findElement(By.xpath("//span[text()='Add attachment']"));
+//    String checkTitile = "Add Attachment";
+//        BrowserUtils.wait(5);
+
+
+    public void clickAttachment(){
+        BrowserUtils.waitForPageToLoad(10);
+        wait.until(ExpectedConditions.elementToBeClickable(clickAddAttachment)).click();
+
+    }
 
     public void clickTheSummerTires(){
         BrowserUtils.waitForPageToLoad(10);
@@ -67,18 +111,6 @@ public class VehicleCostsPage extends AbstractPageBase {
 
     }
 
-//    public void clickDeletePage(){
-//        BrowserUtils.waitForPageToLoad(15);
-//        Actions actions = new Actions(Driver.getDriver());
-//
-//        BrowserUtils.wait(3);
-//
-//        actions.moveToElement(selectionOption).
-//                pause(500).
-//                click(deleteBtn).
-//                pause(2000).
-//                build().perform();
-//    }
     public String getCreatePname(){
         return getCreatePageName.getText();
     }
